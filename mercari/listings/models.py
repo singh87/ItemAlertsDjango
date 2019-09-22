@@ -10,4 +10,4 @@ class Listing(models.Model):
     condition = models.IntegerField()
     image_url = models.URLField()
     price = models.PositiveIntegerField()
-    created_time = models.DateField()
+    created_time = models.DateTimeField()
