@@ -12,3 +12,6 @@ export const getListings = () => dispatch => {
             })
         }).catch(err => console.log(err));
 }
+
+// NEW SEARCH
+// export const 
