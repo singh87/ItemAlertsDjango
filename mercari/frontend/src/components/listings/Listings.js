@@ -35,9 +35,9 @@ export class Listings extends Component {
                   <h6 ><a href={"https://www.mercari.com/us/item/" + listing.item_id}>{listing.title}</a></h6>
                   <p>{listing.description}</p>
                 </Col>
-                <Col span={6}>
+                <Col span={6} style={{paddingLeft:"40px"}}>
                   <p>{listing.created_time}</p>
-                  <Button type="primary" href={listing.item_checkout_url}>Buy</Button>
+                  <Button block type="normal" href={listing.item_checkout_url}>Buy It Now</Button>
                 </Col>
               </Row>
             </Card>
