@@ -24,7 +24,7 @@ export class Sider extends Component {
         defaultOpenKeys={['sub1', 'sub2', 'sub3']}
         inlineIndent="10"
         mode="inline"
-        style={{ width: 256 }}
+        style={{ width: 256}}
       >
         <SubMenu
           key="sub1"
@@ -53,8 +53,8 @@ export class Sider extends Component {
                 <InputNumber defaultValue="Max"></InputNumber>
                 <Button block type="primary" style={{marginTop:"10px",width:"180px"}}>Apply</Button>
             </div>
-            
-              
+
+
           </Menu.ItemGroup>
         </SubMenu>
         <SubMenu

@@ -30,7 +30,7 @@ export class Listings extends Component {
       <Fragment>
         {
           this.props.listings.map(listing => (
-            <Card>
+            <Card hoverable>
               <Row>
                 <Col span={4} order={1}>
                   <img src={listing.image_url} alt="listing photo" width="150" height="150"></img>

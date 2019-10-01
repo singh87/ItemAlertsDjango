@@ -9,7 +9,7 @@ export default function Dashboard() {
         <Fragment>
             <Header/>
             <Row>
-                <Col span={4}>
+                <Col span={4} style={{padding:"1%"}} >
                     <Sider/>
                 </Col>
                 <Col span={16}>

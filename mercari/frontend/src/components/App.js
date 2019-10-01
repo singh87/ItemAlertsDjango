@@ -18,9 +18,9 @@ class App extends Component {
     return (
       <Provider store={store}>
           <Router>
-          <Fragment>
+          <Fragment >
 
-              <div>
+              <div style={{background:"#f7f7f7"}}>
                 <Switch>
                     <Route exact path="/" component={Dashboard}></Route>
                     <Route exact path="/register" component={Register}/>
