@@ -1,30 +1,34 @@
 import React, { Component, Fragment } from "react";
 import ReactDOM from "react-dom";
+import { HashRouter as Router, Route, Switch, Redirect} from "react-router-dom";
 
 import Header from "./layout/Header";
-import Listings from "./listings/Listings";
-import Sider from "./layout/Sider"
+import Dashboard from "./listings/Dashboard";
+import Login from "./accounts/Login"
+import Register from "./accounts/Register"
 
 import { Provider } from "react-redux";
 import store from "../store";
 
 import {Row, Col} from "antd";
+
+
 class App extends Component {
   render() {
     return (
       <Provider store={store}>
-          
-          <Header />
-          
-          <Row>
-            <Col span={4}>
-              <Sider/>
-            </Col>
-            <Col span={16}>
-              <Listings />
-            </Col>
+          <Router>
+          <Fragment>
 
-          </Row>
+              <div>
+                <Switch>
+                    <Route exact path="/" component={Dashboard}></Route>
+                    <Route exact path="/register" component={Register}/>
+                    <Route exact path="/login" component={Login}/>
+                </Switch>
+              </div>
+          </Fragment>
+          </Router>
           
       </Provider>
     );
