@@ -1,4 +1,3 @@
-from django.core.management.base import BaseCommand
 import requests, json, time
 from datetime import datetime, timezone
 
@@ -57,29 +56,30 @@ class MercariRequester:
     def productQuery(self, item_id):
         pass
 
-class Command(BaseCommand):
-    help = "Descriptive string for your management command"
-    def handle(self, **options):
-        api = MercariRequester()
+def Fetch_Items():
 
-        search = api.search(query="nintendo", sortBy=2)
+    api = MercariRequester()
 
-        
-        for entry in search["itemsList"]:
+    search = api.search(query="nintendo", sortBy=2)
 
+    
+    for entry in search["itemsList"]:
+
+        try:
             obj, created = Listing.objects.update_or_create(
                 item_id = entry["id"],
-                title = entry["name"],
-                description = entry["description"],
-                item_checkout_url = entry["checkoutUrl"],
-                price = entry["price"],
-                category = entry["itemCategory"]["name"],
-                condition = entry["itemCondition"]["id"],
-                image_url = entry["photos"][0]["thumbnail"],
-                created_time = datetime.fromtimestamp(entry["created"], timezone.utc)
+                defaults={'item_id': entry['id'],
+                          'price': entry["price"],
+                          'title': entry["name"],
+                          'description': entry["description"],
+                          'item_checkout_url': entry["checkoutUrl"],
+                          'condition': entry["itemCondition"]["id"],
+                          'image_url': entry["photos"][0]["thumbnail"],
+                          'created_time' : datetime.fromtimestamp(entry["created"], timezone.utc),
+                          },
             )
-
-
+        except Exception as e:
+            print(e)
 
 
 # item.title = search[]
