@@ -2,7 +2,10 @@ import React, { Component, Fragment } from "react";
 import { connect } from 'react-redux';
 import PropTypes from "prop-types";
 import { getListings } from '../../actions/listings'
-import { Card, Row, Col, Button, Collapse, Pagination } from "antd"
+import { Card, Row, Col, Button, Collapse, Pagination, Typography } from "antd"
+
+const {Title} = Typography;
+
 
 const mapStateToProps = state => ({
   listings: state.listings.listings
@@ -33,12 +36,12 @@ export class Listings extends Component {
                   <img src={listing.image_url} alt="listing photo" width="150" height="150"></img>
                 </Col>
                 <Col span={12}order={2}>
-                  <h6 ><a href={"https://www.mercari.com/us/item/" + listing.item_id}>{listing.title}</a></h6>
+                    <Title level={4}><a href={"https://www.mercari.com/us/item/" + listing.item_id}>{listing.title}</a></Title>
                   <p>{listing.description}</p>
                 </Col>
                 <Col span={6} style={{paddingLeft:"40px"}}>
                   <p>{listing.created_time}</p>
-                    <h3>${listing.price/100}</h3>
+                    <Title level={3}>${listing.price/100}</Title>
                   <Button block type="normal" href={listing.item_checkout_url}>Buy It Now</Button>
                 </Col>
               </Row>

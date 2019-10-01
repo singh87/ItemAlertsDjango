@@ -138,3 +138,12 @@ dmypy.json
 
 # End of https://www.gitignore.io/api/django
 node_modules
+.idea/dataSources.local.xml
+.idea/dataSources.xml
+.idea/MercariDjango.iml
+.idea/encodings.xml
+.idea/modules.xml
+.idea/misc.xml
+.idea/workspace.xml
+.idea/dataSources/43ce816c-6d0d-4840-bd3a-bef903c7ca39.xml
+.idea/vcs.xml

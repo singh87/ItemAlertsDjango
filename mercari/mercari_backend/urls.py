@@ -20,6 +20,7 @@ from django.conf.urls import include
 urlpatterns = [
     path('', include('frontend.urls')),
     path('', include('listings.urls')),
+    path('', include('accounts.urls')),
     path('admin', admin.site.urls),
     path('django-rq/', include('django_rq.urls')),
 ]
